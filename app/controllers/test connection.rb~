@@ -1,0 +1,7 @@
+require 'mongo'
+puts Gem.loaded_specs["mongo"].version
+
+mongo_uri = 'mongolab:heroku_x36ms8zz://[root:root@]33153'
+client = Mongo::Client.new(mongo_uri);
+db = client.database
+db.collection_names.each{|name| puts name }
